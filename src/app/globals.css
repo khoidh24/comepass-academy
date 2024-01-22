@@ -44,13 +44,13 @@
     @apply lg:hidden h-16 flex items-center text-3xl;
   }
   .nav--mobile_container {
-    @apply h-screen w-[200px] bg-white z-[1000] absolute top-0 left-0 text-xl;
+    @apply h-screen w-[240px] min-w-[240px] bg-white z-[1000] absolute top-0 left-0 text-xl;
   }
   .nav--mobile__list {
-    @apply mt-28 ml-8;
+    @apply mt-28 ml-4;
   }
   .nav--mobile__icon {
-    @apply text-xl flex justify-center items-center mr-6;
+    @apply text-xl flex justify-center items-center mr-8;
   }
   .empty--thrash {
     @apply invisible;
