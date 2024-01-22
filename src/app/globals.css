@@ -2,26 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer components {
+  ul {
+    @apply list-none;
+  }
+  .carousel {
+    @apply h-[460px] text-white leading-[460px] text-center;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .nav--container {
+    @apply bg-slate-100 shadow-lg top-0 left-0 right-0 text-gray-600;
+  }
+  .nav--pc {
+    @apply h-16 mx-auto container flex justify-between items-center;
+  }
+  .nav--link__container {
+    @apply flex justify-between items-center;
+  }
+  .nav--link,
+  .action--link {
+    @apply inline-block mx-4 my-auto;
+  }
+  .nav--link__items {
+    @apply lg:ml-12 hidden lg:list-item;
+  }
+  .action--link__items {
+    @apply hidden lg:list-item;
+  }
+  .action--link__signin {
+    @apply bg-white text-black px-4 py-1 rounded-full;
+  }
+  .search--bar__container,
+  .action--link__container {
+    @apply hidden lg:block;
+  }
+
+  .overlay {
+    @apply w-screen h-screen absolute top-0 left-0 bottom-0 right-0 bg-black;
+  }
+  .nav--mobile__button {
+    @apply lg:hidden h-16 flex items-center text-3xl;
+  }
+  .nav--mobile_container {
+    @apply h-screen w-[200px] bg-white z-[1000] absolute top-0 left-0 text-xl;
+  }
+  .nav--mobile__list {
+    @apply mt-28 ml-8;
+  }
+  .nav--mobile__icon {
+    @apply text-xl flex justify-center items-center mr-6;
+  }
+  .empty--thrash {
+    @apply invisible;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: white;
 }
