@@ -50,7 +50,7 @@
     @apply mt-28 ml-4;
   }
   .nav--mobile__icon {
-    @apply text-xl flex justify-center items-center mr-8;
+    @apply text-xl flex justify-center items-center mr-10;
   }
   .empty--thrash {
     @apply invisible;
