@@ -17,7 +17,7 @@
     @apply h-16 mx-auto container flex justify-between items-center;
   }
   .nav--link__container {
-    @apply flex justify-between items-center;
+    @apply flex justify-around items-center;
   }
   .nav--link,
   .action--link {
@@ -30,7 +30,7 @@
     @apply hidden lg:list-item;
   }
   .action--link__signin {
-    @apply bg-white text-black px-4 py-1 rounded-full;
+    @apply bg-white text-black px-4 py-1 rounded-xl;
   }
   .search--bar__container,
   .action--link__container {
@@ -50,7 +50,7 @@
     @apply mt-28 ml-4;
   }
   .nav--mobile__icon {
-    @apply text-xl flex justify-center items-center mr-10;
+    @apply text-xl flex justify-center items-center mr-6;
   }
   .empty--thrash {
     @apply invisible;

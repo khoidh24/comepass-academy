@@ -25,19 +25,23 @@ const GALLERY: GalleryItem[] = [
 ]
 
 const App: React.FC = () => (
-  <Carousel autoplay>
-    {GALLERY.map((item) => (
-      <div key={item.key}>
-        <Image
-          className='carousel object-cover'
-          src={item.source}
-          alt={item.alt}
-          width={item.width}
-          height={item.height}
-        />
-      </div>
-    ))}
-  </Carousel>
+  <div className='flex justify-center items-center'>
+    <div className='container'>
+      <Carousel autoplay className='mt-20 rounded-xl'>
+        {GALLERY.map((item) => (
+          <div key={item.key}>
+            <Image
+              className='carousel object-cover rounded-xl'
+              src={item.source}
+              alt={item.alt}
+              width={item.width}
+              height={item.height}
+            />
+          </div>
+        ))}
+      </Carousel>
+    </div>
+  </div>
 )
 
 export default App

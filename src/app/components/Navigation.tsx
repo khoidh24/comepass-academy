@@ -62,10 +62,12 @@ const ACTION_MENU: ActionItems[] = [
 ]
 
 const App: React.FC = () => {
-  //Declare Hook Components
+  //NOTE: Declare Hook Components
   const [searchQuery, setSearchQuery] = useState<string>('')
   const [isShowMobileNavigation, setIsShowMobileNavigation] = useState<boolean>(false)
+  const [isChosen, setIsChosen] = useState<MenuItems>(NAVIGATION_MENU[0])
 
+  //Handle Search Bar
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value)
   }
@@ -76,42 +78,52 @@ const App: React.FC = () => {
     console.log('Searching for:', searchQuery)
   }
 
-  const MobileMenuHandle = () => {
+  //Handle Mobile Navigation
+  const mobileMenuHandle = () => {
     setIsShowMobileNavigation(!isShowMobileNavigation)
+  }
+  const navigationSelectedHandler = (menuItem: MenuItems) => {
+    setIsChosen(menuItem)
   }
 
   return (
     <div className='nav--container'>
       <nav className={`nav--pc ${lexendDeca.className}`}>
-        {/*Mobile & Tablet Screen*/}
-        <div>
-          <button onClick={MobileMenuHandle}>
-            <MenuOutlined className='nav--mobile__button' />
+        {/*PENDING Mobile & Tablet Screen*/}
+        <div className='nav--mobile__button'>
+          <button onClick={mobileMenuHandle}>
+            <MenuOutlined />
           </button>
         </div>
         <div
-          className={`${isShowMobileNavigation ? 'bg-opacity-30' : 'bg-opacity-0 hidden'} overlay`}
+          className={`overlay transition-opacity duration-500 ${
+            isShowMobileNavigation ? 'opacity-50' : 'opacity-0 hidden'
+          }`}
         ></div>
         <div
           className={`${
             isShowMobileNavigation == false ? '-translate-x-full' : 'translate-x-0'
-          } nav--mobile_container transition-transform transform  ease-linear duration-150`}
+          } nav--mobile_container transition-transform transform  ease-linear duration-200`}
         >
           <ul className='nav--mobile__list'>
             {NAVIGATION_MENU.map((item) => (
               <li className='mx-auto my-8' key={item.key}>
-                <Link className='flex' href={item.link}>
+                <Link
+                  className={`flex ${isChosen === item ? 'bg-slate-100 py-2 rounded-l-xl' : ''}`}
+                  href={item.link}
+                  onClick={() => navigationSelectedHandler(item)}
+                >
                   <span className='nav--mobile__icon'>{item.icon}</span>
                   {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-          <button onClick={MobileMenuHandle}>
+          <button onClick={mobileMenuHandle}>
             <CloseOutlined className='absolute top-0 right-0 px-3 py-3' />
           </button>
         </div>
-        {/*PC Screen*/}
+        {/*COMPLETED: PC Screen*/}
         <div className='nav--link__container'>
           {/*Logo*/}
           <Image src={'/logo.png'} width={100} height={100} alt='Comepass Logo' />
@@ -124,17 +136,17 @@ const App: React.FC = () => {
             ))}
           </ul>
         </div>
-        {/*User Profile - work in progress*/}
+        {/*TODO: User Profile - WIP*/}
         <div className='empty--thrash'></div>
+        {/*Search Bar*/}
         <div className='search--bar__container'>
-          {/*Search Bar*/}
           <form onSubmit={handleSearchSubmit} className='flex items-center'>
             <input
               type='text'
               placeholder='Search...'
               value={searchQuery}
               onChange={handleSearchChange}
-              className='hidden lg:block lg:w-[360px] xl:w-[480px] px-4 py-1 bg-transparent border border-black border-r-0 rounded-l-full focus:outline-none focus:shadow-outline text-gray-600'
+              className='search--bar__input hidden lg:block lg:w-[360px] xl:w-[480px] px-4 py-1 bg-transparent border border-black border-r-0 rounded-l-full focus:outline-none focus:shadow-outline text-gray-600'
             />
             <button
               type='submit'
@@ -144,8 +156,8 @@ const App: React.FC = () => {
             </button>
           </form>
         </div>
+        {/*Sign-in and Sign-up */}
         <div className='action--link__container'>
-          {/*Sign-in and Sign-up */}
           <ul>
             {ACTION_MENU.map((item) => (
               <li className={`action--link ${item.class}`} key={item.key}>
