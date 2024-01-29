@@ -87,7 +87,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className='nav--container sticky z-50'>
+    <div className='nav--container sticky'>
       <nav className={`nav--pc ${lexendDeca.className}`}>
         {/*PENDING Mobile & Tablet Screen*/}
         <div className='nav--mobile__button'>
