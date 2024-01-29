@@ -23,7 +23,7 @@ const GALLERY: GalleryItem[] = [
 ]
 
 const Hero: React.FC = () => (
-  <div className='flex justify-center items-center'>
+  <div className='flex justify-center items-center mt-20'>
     <div className='container'>
       <Carousel autoplay className='mt-10 '>
         {GALLERY.map((item) => (
