@@ -1,11 +1,15 @@
 import Navigation from './components/Navigation'
-import Carousel from './components/Carousel'
+import Hero from './components/Hero'
+import Courses from './components/Courses'
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Navigation />
-      <Carousel />
-    </div>
+      <Hero />
+      <Courses />
+      <Footer />
+    </>
   )
 }

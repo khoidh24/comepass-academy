@@ -45,13 +45,13 @@ const NAVIGATION_MENU: MenuItems[] = [
   {
     label: 'Courses',
     key: 'courses',
-    link: '/courses',
+    link: '#',
     icon: <BookOutlined />
   },
   {
     label: 'Blog',
     key: 'blog',
-    link: '/blog',
+    link: '#',
     icon: <AuditOutlined />
   }
 ]
@@ -62,23 +62,23 @@ const ACTION_MENU: ActionItems[] = [
 ]
 
 const App: React.FC = () => {
-  //NOTE: Declare Hook Components
+  //* Declare Hook Components
   const [searchQuery, setSearchQuery] = useState<string>('')
   const [isShowMobileNavigation, setIsShowMobileNavigation] = useState<boolean>(false)
   const [isChosen, setIsChosen] = useState<MenuItems>(NAVIGATION_MENU[0])
 
-  //Handle Search Bar
+  //! Handle Search Bar
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value)
   }
 
   const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Add your search functionality here
+    //! Add your search functionality here
     console.log('Searching for:', searchQuery)
   }
 
-  //Handle Mobile Navigation
+  //! Handle Mobile Navigation
   const mobileMenuHandle = () => {
     setIsShowMobileNavigation(!isShowMobileNavigation)
   }
@@ -126,12 +126,25 @@ const App: React.FC = () => {
         {/*COMPLETED: PC Screen*/}
         <div className='nav--link__container'>
           {/*Logo*/}
-          <Image src={'/logo.png'} width={100} height={100} alt='Comepass Logo' />
+          <Image
+            src={'/logo.png'}
+            width={100}
+            height={100}
+            alt='Comepass Logo'
+            priority
+            className='w-auto h-auto'
+          />
           {/*Navigation Menu Items*/}
           <ul className='nav--link__items'>
             {NAVIGATION_MENU.map((item) => (
               <li className='nav--link' key={item.key}>
-                <Link href={item.link}>{item.label}</Link>
+                <Link
+                  className={`nav__link--pc ${isChosen === item ? 'is--active' : ''}`}
+                  href={item.link}
+                  onClick={() => navigationSelectedHandler(item)}
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>

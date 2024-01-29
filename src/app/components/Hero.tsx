@@ -12,30 +12,28 @@ interface GalleryItem {
   source: string
   key: string
   alt: string
-  width: number
-  height: number
 }
 
 //Image Array Object - Modify Image Here
 const GALLERY: GalleryItem[] = [
-  { source: `/1.png`, key: '1', alt: '1', width: 1920, height: 460 },
-  { source: `/2.png`, key: '2', alt: '2', width: 1920, height: 460 },
-  { source: `/3.png`, key: '3', alt: '3', width: 1920, height: 460 },
-  { source: `/4.png`, key: '4', alt: '4', width: 1920, height: 460 }
+  { source: `/1.png`, key: '1', alt: '1' },
+  { source: `/2.png`, key: '2', alt: '2' },
+  { source: `/3.png`, key: '3', alt: '3' },
+  { source: `/4.png`, key: '4', alt: '4' }
 ]
 
-const App: React.FC = () => (
+const Hero: React.FC = () => (
   <div className='flex justify-center items-center'>
     <div className='container'>
-      <Carousel autoplay className='mt-20 rounded-xl'>
+      <Carousel autoplay className='mt-10 '>
         {GALLERY.map((item) => (
-          <div key={item.key}>
+          <div key={item.key} className='relative'>
             <Image
-              className='carousel object-cover rounded-xl'
+              className='carousel object-cover w-full max-w-full h-[460px]'
               src={item.source}
               alt={item.alt}
-              width={item.width}
-              height={item.height}
+              width={1920}
+              height={460}
             />
           </div>
         ))}
@@ -44,4 +42,4 @@ const App: React.FC = () => (
   </div>
 )
 
-export default App
+export default Hero

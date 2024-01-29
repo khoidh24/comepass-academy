@@ -1,0 +1,107 @@
+[
+  {
+    "categoryLabel": "New",
+    "courses": [
+      {
+        "courseName": "Sample Course 1",
+        "key": "sample-course-1",
+        "courseLink": "#",
+        "couseImage": "/course1.png"
+      },
+      {
+        "courseName": "Sample Course 2",
+        "key": "sample-course-2",
+        "courseLink": "#",
+        "couseImage": "/course2.png"
+      },
+      {
+        "courseName": "Sample Course 3",
+        "key": "sample-course-3",
+        "courseLink": "#",
+        "couseImage": "/course3.png"
+      },
+      {
+        "courseName": "Sample Course 4",
+        "key": "sample-course-4",
+        "courseLink": "#",
+        "couseImage": "/course4.png"
+      },
+      {
+        "courseName": "Sample Course 5",
+        "key": "sample-course-5",
+        "courseLink": "#",
+        "couseImage": "/course5.png"
+      }
+    ]
+  },
+  {
+    "categoryLabel": "For Beginners",
+    "courses": [
+      {
+        "courseName": "Sample Course 1",
+        "key": "sample-course-1",
+        "courseLink": "#",
+        "couseImage": "/course1.png"
+      },
+      {
+        "courseName": "Sample Course 2",
+        "key": "sample-course-2",
+        "courseLink": "#",
+        "couseImage": "/course2.png"
+      },
+      {
+        "courseName": "Sample Course 3",
+        "key": "sample-course-3",
+        "courseLink": "#",
+        "couseImage": "/course3.png"
+      },
+      {
+        "courseName": "Sample Course 4",
+        "key": "sample-course-4",
+        "courseLink": "#",
+        "couseImage": "/course4.png"
+      },
+      {
+        "courseName": "Sample Course 5",
+        "key": "sample-course-5",
+        "courseLink": "#",
+        "couseImage": "/course5.png"
+      }
+    ]
+  },
+  {
+    "categoryLabel": "Advanced Courses",
+    "courses": [
+      {
+        "courseName": "Sample Course 1",
+        "key": "sample-course-1",
+        "courseLink": "#",
+        "couseImage": "/course1.png"
+      },
+      {
+        "courseName": "Sample Course 2",
+        "key": "sample-course-2",
+        "courseLink": "#",
+        "couseImage": "/course2.png"
+      },
+      {
+        "courseName": "Sample Course 3",
+        "key": "sample-course-3",
+        "courseLink": "#",
+        "couseImage": "/course3.png"
+      },
+      {
+        "courseName": "Sample Course 4",
+        "key": "sample-course-4",
+        "courseLink": "#",
+        "couseImage": "/course4.png"
+      },
+      {
+        "courseName": "Sample Course 5",
+        "key": "sample-course-5",
+        "courseLink": "#",
+        "couseImage": "/course5.png"
+      }
+    ]
+  }
+]
