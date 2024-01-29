@@ -11,7 +11,7 @@
   }
 
   .nav--container {
-    @apply bg-slate-100 shadow-lg top-0 left-0 right-0 text-gray-600;
+    @apply bg-slate-100 shadow-lg top-0 left-0 right-0 text-gray-600 fixed z-50;
   }
   .nav--pc {
     @apply container h-16 mx-auto flex justify-between items-center;
