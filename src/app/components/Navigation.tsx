@@ -17,7 +17,7 @@ import {
   CloseOutlined
 } from '@ant-design/icons'
 
-// Variables defined
+// Define Variables
 const lexendDeca = Lexend_Deca({ subsets: ['latin'] })
 
 interface MenuItems {
